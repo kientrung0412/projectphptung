@@ -1,39 +1,36 @@
 <?php
 
 
-class cart
+class car
 {
 
     private $cartId;
     private $cartName;
 
-    public function cart($cartId, $cartName){
+    public function car($cartId, $cartName){
         $this->cartId = $cartId;
         $this->cartName = $cartName;
     }
 
-    public function getCartId()
+    public function getCarId()
     {
         return $this->cartId;
     }
 
-    public function setCartId($cartId): void
+    public function setCarId($cartId): void
     {
         $this->cartId = $cartId;
     }
 
-    public function getCartName()
+    public function getCarName()
     {
         return $this->cartName;
     }
 
-    public function setCartName($cartName): void
+    public function setCarName($cartName): void
     {
         $this->cartName = $cartName;
     }
 
 }
 
-
-$bmv = new cart(1, "BMV");
-echo $bmv->getCartName();

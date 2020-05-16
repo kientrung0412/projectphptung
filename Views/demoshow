@@ -1,0 +1,10 @@
+<?php require '../DAO/CarDAO.php' ?>
+
+<select name="carid" id="">
+    <?php
+    $rs = selectCart();
+    while ($row = $rs->fetch_assoc()) {
+        ?>
+        <option value="<?php echo $row["CarId"] ?>"> <?php echo $row["CarName"] ?> </option>
+    <?php } ?>
+</select>

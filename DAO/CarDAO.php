@@ -1,5 +1,7 @@
 <?php
 require '../Models/Config.php';
+require '../EF/Car.php';
+
 function insCar(string $carName)
 {
     //câu lệnh sql
@@ -39,14 +41,21 @@ function selectCart()
 
     $conn = conn();
 
-    return $conn->query($sql);
+    $rs = $conn->query($sql);
+
+    if ($rs->num_rows>0){
+        return $rs;
+    }
 
     $conn->close();
 
 }
 
-function updateCar(string $carName, int $carId)
+function updateCar(car $car)
 {
+    $carName = $car->getCarName();
+    $carId = $car->getCarId();
+
     $sql = "update car set CarName = '$carName' where CarId = $carId";
 
     $conn = conn();
